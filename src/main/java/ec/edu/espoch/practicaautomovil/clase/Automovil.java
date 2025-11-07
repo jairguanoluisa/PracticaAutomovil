@@ -113,10 +113,9 @@ public class Automovil {
     
     //METODOS
     public boolean acelerar(int velocidad) {
-        // 1. Verificar la regla de la velocidad máxima.
+        //verificar regla de la velocidad máxima.
         if (velocidadActual + velocidad <= velocidadMaxima) {
-            // 2. Modificar el atributo de instancia (implícitamente se refiere a this.velocidadActual).
-            velocidadActual += velocidad;
+            velocidadActual = velocidadActual + velocidad;
             return true;
         } else {
             System.out.println("No se puede acelerar mas alla de la velocidad maxima (" + velocidadMaxima + " km/h).");
@@ -125,10 +124,10 @@ public class Automovil {
     }
     
     public boolean desacelerar(int velocidad) {
-        // 1. Verificar la regla de la velocidad negativa.
+        //velocidad negativa.
         if (velocidadActual - velocidad >= 0) {
-            // 2. Modificar el atributo de instancia.
-            velocidadActual -= velocidad;
+            //modificar el atributo de instancia.
+            velocidadActual = velocidadActual - velocidad;
             return true;
         } else {
             System.out.println("No es posible desacelerar a una velocidad negativa.");
@@ -136,22 +135,20 @@ public class Automovil {
         }
     }
     
-    public void frenar() {
-        // 3. Asignación simple.
-        velocidadActual = 0;
-    }
-    
     public double calcularTiempoEstimado(double distancia) {
-        // 4. Regla: Evitar división por cero.
+        //Evitar división por cero.
         if (velocidadActual > 0) {
-            // Lógica: Tiempo = Distancia / Velocidad
-            return distancia / velocidadActual;
+            return distancia / velocidadActual; //Tiempo = Distancia / Velocidad
         } else {
             System.out.println("No se puede calcular el tiempo estimado. El vehiculo esta detenido.");
             return Double.POSITIVE_INFINITY;
         }
     }
-        
+    
+    public void frenar() {
+        velocidadActual = 0; //frena de una jajaj
+    }
+    
     public void mostrarValores(){
         System.out.println("Marca: " + marca);
         System.out.println("Modelo: " + modelo);
