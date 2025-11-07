@@ -119,7 +119,7 @@ public class Automovil {
             velocidadActual += velocidad;
             return true;
         } else {
-            System.out.println("❌ Advertencia: No se puede acelerar mas alla de la velocidad maxima (" + velocidadMaxima + " km/h).");
+            System.out.println("No se puede acelerar mas alla de la velocidad maxima (" + velocidadMaxima + " km/h).");
             return false;
         }
     }
@@ -131,7 +131,7 @@ public class Automovil {
             velocidadActual -= velocidad;
             return true;
         } else {
-            System.out.println("⚠️ Advertencia: No es posible desacelerar a una velocidad negativa.");
+            System.out.println("No es posible desacelerar a una velocidad negativa.");
             return false;
         }
     }
